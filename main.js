@@ -33,9 +33,13 @@ const ambientLight = new THREE.AmbientLight(0xffffff,10); // Soft white light
 scene.add(ambientLight);
 
 
+// Helpers
 
+const lightHelper = new THREE.PointLightHelper(pointLight)
+const gridHelper = new THREE.GridHelper(200, 50);
+scene.add(lightHelper, gridHelper)
 
-
+const controls = new OrbitControls(camera, renderer.domElement);
 
 function animate() {
   requestAnimationFrame(animate);
